@@ -42,7 +42,7 @@ esac
 
 echo "Starting: minecraft ${mc_port}"
 #eval "java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui &"
-"nodejs ./MultiOgar-Edited-master/src/index.js"
+"node ./MultiOgar-Edited-master/src/index.js"
 main_pid=$!
 
 trap "kill $ngrok_pid $main_pid $sync_pid" SIGTERM
