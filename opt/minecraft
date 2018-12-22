@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mc_port=25566
+mc_port=443
 port=${1:-${PORT:-8080}}
 
 if [ -z "$NGROK_API_TOKEN" ]; then
@@ -41,7 +41,8 @@ case $limit in
 esac
 
 echo "Starting: minecraft ${mc_port}"
-eval "java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui &"
+#eval "java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui &"
+"nodejs ./MultiOgar-Edited-master/src/index.js"
 main_pid=$!
 
 trap "kill $ngrok_pid $main_pid $sync_pid" SIGTERM
