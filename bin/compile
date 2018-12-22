@@ -57,11 +57,14 @@ unzip ngrok.zip -d $BUILD_DIR/bin > /dev/null 2>&1
 echo "done"
 
 minecraft_version=${MINECRAFT_VERSION:-"1.10.2"}
-minecraft_url="https://s3.amazonaws.com/Minecraft.Download/versions/${minecraft_version}/minecraft_server.${minecraft_version}.jar"
+#minecraft_url="https://s3.amazonaws.com/Minecraft.Download/versions/${minecraft_version}/minecraft_server.${minecraft_version}.jar"
+minecraft_url="https://github.com/Megabyte918/MultiOgar-Edited/archive/master.zip"
 
 echo -n "-----> Installing Minecraft ${minecraft_version}... "
-curl -o minecraft.jar -s -L $minecraft_url
-mv minecraft.jar $BUILD_DIR/minecraft.jar
+#curl -o minecraft.jar -s -L $minecraft_url
+curl -o multiogar.zip -s -L $minecraft_url
+mv multiogar.zip $BUILD_DIR/multiogar.zip
+unzip multiogar.zip
 echo "done"
 
 if [ -n "${MINECRAFT_EULA:-""}" ]; then
