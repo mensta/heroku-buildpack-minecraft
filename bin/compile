@@ -64,7 +64,7 @@ echo -n "-----> Installing Minecraft ${minecraft_version}... "
 #curl -o minecraft.jar -s -L $minecraft_url
 curl -o multiogar.zip -s -L $minecraft_url
 mv multiogar.zip $BUILD_DIR/multiogar.zip
-unzip multiogar.zip
+unzip $BUILD_DIR/multiogar.zip
 echo "done"
 
 if [ -n "${MINECRAFT_EULA:-""}" ]; then
